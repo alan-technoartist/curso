@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{306b8af7-576a-4b8b-a6ff-48c69dcad1df}</ProjectGuid>
+    <RootNamespace>TechnoArtistW11</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\AlanBautista\source\repos\TechnoArtistW11\TechnoArtistW11\LevelTwo\Algo;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="LevelOne\array.cpp" />
+    <ClCompile Include="LevelOne\cast.cpp" />
+    <ClCompile Include="LevelOne\class.cpp" />
+    <ClCompile Include="LevelOne\conditional.cpp" />
+    <ClCompile Include="LevelOne\enum.cpp" />
+    <ClCompile Include="LevelOne\function.cpp" />
+    <ClCompile Include="LevelOne\loop.cpp" />
+    <ClCompile Include="LevelOne\namespace.cpp" />
+    <ClCompile Include="LevelOne\struct.cpp" />
+    <ClCompile Include="LevelOne\types.cpp" />
+    <ClCompile Include="LevelOne\vector.cpp" />
+    <ClCompile Include="LevelTwo\abstract.cpp" />
+    <ClCompile Include="LevelTwo\algorithm.cpp" />
+    <ClCompile Include="LevelTwo\Algo\algoritmos.cpp" />
+    <ClCompile Include="LevelTwo\complejo.cpp" />
+    <ClCompile Include="LevelTwo\doubleLinkedList.cpp" />
+    <ClCompile Include="LevelTwo\excepciones1.cpp" />
+    <ClCompile Include="LevelTwo\exception.cpp" />
+    <ClCompile Include="LevelTwo\exception2.cpp" />
+    <ClCompile Include="LevelTwo\factory.cpp" />
+    <ClCompile Include="LevelTwo\herencia.cpp" />
+    <ClCompile Include="LevelTwo\herenciaGeneral.cpp" />
+    <ClCompile Include="LevelTwo\inheritance.cpp" />
+    <ClCompile Include="LevelTwo\Inventario2\sistemaInventario2.cpp" />
+    <ClCompile Include="LevelTwo\Inventario3\Inventario3.cpp" />
+    <ClCompile Include="LevelTwo\Inventario3\sistemaInventario3.cpp" />
+    <ClCompile Include="LevelTwo\Inventario\sistemaInventario.cpp" />
+    <ClCompile Include="LevelTwo\Inventario\src\Excepciones.cpp" />
+    <ClCompile Include="LevelTwo\Inventario\src\Inventario.cpp" />
+    <ClCompile Include="LevelTwo\Inventario\src\Producto.cpp" />
+    <ClCompile Include="LevelTwo\Inventario\src\ProductoElectronico.cpp" />
+    <ClCompile Include="LevelTwo\Inventario\src\ProductoFarmacia.cpp" />
+    <ClCompile Include="LevelTwo\linkedList.cpp" />
+    <ClCompile Include="LevelTwo\listaSimple.cpp" />
+    <ClCompile Include="LevelTwo\operator.cpp" />
+    <ClCompile Include="LevelTwo\operatorOverload.cpp" />
+    <ClCompile Include="LevelTwo\plantillas.cpp" />
+    <ClCompile Include="LevelTwo\pointers.cpp" />
+    <ClCompile Include="LevelTwo\references.cpp" />
+    <ClCompile Include="LevelTwo\singleton.cpp" />
+    <ClCompile Include="LevelTwo\SinglyLinkedList.cpp" />
+    <ClCompile Include="LevelTwo\smartPointers.cpp" />
+    <ClCompile Include="LevelTwo\static.cpp" />
+    <ClCompile Include="LevelTwo\templates.cpp" />
+    <ClCompile Include="LevelTwo\vehiculo.cpp" />
+    <ClCompile Include="LevelTwo\videojuego.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\levelOne.hpp" />
+    <ClInclude Include="include\levelTwo.hpp" />
+    <ClInclude Include="LevelTwo\concepts.hpp" />
+    <ClInclude Include="LevelTwo\Generic\concepts.hpp" />
+    <ClInclude Include="LevelTwo\Generic\templates.hpp" />
+    <ClInclude Include="LevelTwo\Inventario3\Inventario3.hpp" />
+    <ClInclude Include="LevelTwo\Inventario\include\Conexion.hpp" />
+    <ClInclude Include="LevelTwo\Inventario\include\Excepciones.hpp" />
+    <ClInclude Include="LevelTwo\Inventario\include\Inventario.hpp" />
+    <ClInclude Include="LevelTwo\Inventario\include\Producto.hpp" />
+    <ClInclude Include="LevelTwo\Inventario\include\ProductoElectronico.hpp" />
+    <ClInclude Include="LevelTwo\Inventario\include\ProductoFarmacia.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
