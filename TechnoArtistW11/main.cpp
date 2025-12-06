@@ -92,6 +92,8 @@ int main() {
     //testOrdenar();
     //testBusquedaBinaria();
 
+    /* STL */
+    testContainers();
 
     return 0;
 }
