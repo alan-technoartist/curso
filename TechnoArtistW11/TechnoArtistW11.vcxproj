@@ -153,12 +153,12 @@
     <ClCompile Include="LevelTwo\references.cpp" />
     <ClCompile Include="LevelTwo\smartPointers.cpp" />
     <ClCompile Include="LevelTwo\static.cpp" />
-    <ClCompile Include="LevelTwo\STL\Contenedores\Asociativos\map.cpp" />
-    <ClCompile Include="LevelTwo\STL\Contenedores\Asociativos\set.cpp" />
-    <ClCompile Include="LevelTwo\STL\Contenedores\Secuenciales\deque.cpp" />
-    <ClCompile Include="LevelTwo\STL\Contenedores\Secuenciales\forward_list.cpp" />
-    <ClCompile Include="LevelTwo\STL\Contenedores\Secuenciales\list.cpp" />
-    <ClCompile Include="LevelTwo\STL\testContainers.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\deque.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\forward_list.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\list.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\map.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\set.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\testContainers.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
