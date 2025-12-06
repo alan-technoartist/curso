@@ -86,7 +86,7 @@ int main() {
      
     /* Templates */
     //testTemplates();
-    pruebaPlantillas();
+    //pruebaPlantillas();
 
     /* Algoritmos */
     //testOrdenar();
