@@ -11,16 +11,32 @@ public:
 	std::string nombre;
 	float calificacion;
 
-	//operator<
+};
+
+struct ComparadorAlumnos {
+	bool operator()(const Alumno& a1, const Alumno& a2) const {
+		return (a1.nombre < a2.nombre);
+	}
 };
 
 void testSet() {
-	//std::set<Alumno> alumnos = {
-	//	Alumno("Alan Bautista", 6.0),
-	//	Alumno("Armando Cruz", 9.0)
-	//};
+	std::set<Alumno, ComparadorAlumnos> alumnos;
 
-	//alumnos.insert();
-	//alumnos.insert();
+	const Alumno& alumno1 = Alumno("Alan Bautista", 6.0);
+	const Alumno& alumno2 = Alumno("Aarmando Cruz", 9.0);
+	const Alumno& alumno3 = Alumno("Julian Ramirez", 8.0);
+	const Alumno& alumno4 = Alumno("Julian Ramirez", 5.0);
+
+	// Alumno1 < Alumno2 => true/false
+	// Alumno1.operator<(Alumno2) => true/false
+
+	alumnos.insert(alumno1);
+	alumnos.insert(alumno2);
+	alumnos.insert(alumno3);
+	alumnos.insert(alumno4);
+
+	for (const auto& alumno : alumnos) {
+		std::cout << alumno.calificacion << std::endl;
+	}
 
 }
