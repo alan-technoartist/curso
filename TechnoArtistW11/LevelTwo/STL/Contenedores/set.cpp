@@ -30,10 +30,20 @@ void testSet() {
 	// Alumno1 < Alumno2 => true/false
 	// Alumno1.operator<(Alumno2) => true/false
 
-	alumnos.insert(alumno1);
+	auto resultado = alumnos.insert(alumno1);
+
+	if (resultado.second == false) {
+		std::cout << "Alumno 1 no pudo insertarse" << std::endl;
+	}
+
 	alumnos.insert(alumno2);
 	alumnos.insert(alumno3);
-	alumnos.insert(alumno4);
+
+	resultado = alumnos.insert(alumno4);
+
+	if (resultado.second == false) {
+		std::cout << "Alumno 4 no pudo insertarse" << std::endl;
+	}
 
 	for (const auto& alumno : alumnos) {
 		std::cout << alumno.calificacion << std::endl;

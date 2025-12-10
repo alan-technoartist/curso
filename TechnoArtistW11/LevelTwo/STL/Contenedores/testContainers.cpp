@@ -5,5 +5,7 @@ void testContainers() {
 	//testDeque();
 	//testList();
 	//testMap();
-	testSet();
+	//testSet();
+	//testMultimap();
+	testMultiset();
 }
