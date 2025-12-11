@@ -7,5 +7,7 @@ void testContainers() {
 	//testMap();
 	//testSet();
 	//testMultimap();
-	testMultiset();
+	//testMultiset();
+	testUnorderedMap();
+	//testUnorderedSet();
 }

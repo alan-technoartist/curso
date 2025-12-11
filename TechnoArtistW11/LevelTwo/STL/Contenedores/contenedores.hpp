@@ -4,3 +4,5 @@ extern void testMap();
 extern void testSet();
 extern void testMultimap();
 extern void testMultiset();
+extern void testUnorderedMap();
+extern void testUnorderedSet();
