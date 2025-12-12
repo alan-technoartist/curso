@@ -159,7 +159,9 @@
     <ClCompile Include="LevelTwo\STL\Contenedores\map.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\multimap.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\multiset.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\queue.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\set.cpp" />
+    <ClCompile Include="LevelTwo\STL\Contenedores\stack.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\testContainers.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\unorderedMap.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\unorderedSet.cpp" />

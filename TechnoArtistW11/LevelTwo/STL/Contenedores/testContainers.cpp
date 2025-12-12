@@ -8,6 +8,8 @@ void testContainers() {
 	//testSet();
 	//testMultimap();
 	//testMultiset();
-	testUnorderedMap();
+	//testUnorderedMap();
 	//testUnorderedSet();
+	testStack();
+	testQueue();
 }

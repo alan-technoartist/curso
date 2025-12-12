@@ -6,3 +6,5 @@ extern void testMultimap();
 extern void testMultiset();
 extern void testUnorderedMap();
 extern void testUnorderedSet();
+extern void testStack();
+extern void testQueue();
