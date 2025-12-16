@@ -93,7 +93,8 @@ int main() {
     //testBusquedaBinaria();
 
     /* STL */
-    testContainers();
+    //testContainers();
+    testIterator();
 
     return 0;
 }

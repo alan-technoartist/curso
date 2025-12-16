@@ -44,3 +44,4 @@ extern void pruebaPlantillas(void);
 extern void testOrdenar(void);
 extern void testBusquedaBinaria(void);
 extern void testContainers(void);
+extern void testIterator(void);

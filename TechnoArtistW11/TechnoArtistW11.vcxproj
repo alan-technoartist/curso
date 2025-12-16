@@ -154,7 +154,6 @@
     <ClCompile Include="LevelTwo\smartPointers.cpp" />
     <ClCompile Include="LevelTwo\static.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\deque.cpp" />
-    <ClCompile Include="LevelTwo\STL\Contenedores\forward_list.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\list.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\map.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\multimap.cpp" />
@@ -165,6 +164,7 @@
     <ClCompile Include="LevelTwo\STL\Contenedores\testContainers.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\unorderedMap.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\unorderedSet.cpp" />
+    <ClCompile Include="LevelTwo\STL\Iteradores\general.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +179,7 @@
     <ClInclude Include="LevelTwo\Inventario\include\ProductoElectronico.hpp" />
     <ClInclude Include="LevelTwo\Inventario\include\ProductoFarmacia.hpp" />
     <ClInclude Include="LevelTwo\STL\Contenedores\contenedores.hpp" />
+    <ClInclude Include="LevelTwo\STL\Iteradores\iteradores.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

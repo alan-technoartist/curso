@@ -10,6 +10,6 @@ void testContainers() {
 	//testMultiset();
 	//testUnorderedMap();
 	//testUnorderedSet();
-	testStack();
-	testQueue();
+	//testStack();
+	//testQueue();
 }
