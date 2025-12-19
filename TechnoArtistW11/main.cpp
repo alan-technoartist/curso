@@ -94,7 +94,9 @@ int main() {
 
     /* STL */
     //testContainers();
-    testIterator();
+    //testIterator();
+    //testInputOutputIterator();
+    testForwardIterator();
 
     return 0;
 }

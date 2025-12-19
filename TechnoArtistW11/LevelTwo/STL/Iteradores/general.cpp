@@ -14,5 +14,4 @@ void testIterator() {
 		std::cout << elemento << std::endl;
 	}
 
-	std::find(arreglo.begin(), arreglo.begin()+2, 10);
 }

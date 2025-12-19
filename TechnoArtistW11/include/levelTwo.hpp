@@ -45,3 +45,5 @@ extern void testOrdenar(void);
 extern void testBusquedaBinaria(void);
 extern void testContainers(void);
 extern void testIterator(void);
+extern void testInputOutputIterator(void);
+extern void testForwardIterator(void);

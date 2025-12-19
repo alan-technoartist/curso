@@ -40,6 +40,9 @@
     <Filter Include="Source Files\LevelTwo\STL\Contenedores">
       <UniqueIdentifier>{480c2122-cf92-43f4-8aa9-c492f1964cf1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LevelTwo\STL\Iteradores">
+      <UniqueIdentifier>{a7232d47-66d9-4dab-a1da-dc877d804396}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LevelOne\array.cpp">
@@ -129,9 +132,6 @@
     <ClCompile Include="LevelTwo\STL\Contenedores\deque.cpp">
       <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
     </ClCompile>
-    <ClCompile Include="LevelTwo\STL\Contenedores\forward_list.cpp">
-      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
-    </ClCompile>
     <ClCompile Include="LevelTwo\STL\Contenedores\list.cpp">
       <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
     </ClCompile>
@@ -143,6 +143,33 @@
     </ClCompile>
     <ClCompile Include="LevelTwo\STL\Contenedores\testContainers.cpp">
       <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Iteradores\general.cpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Contenedores\multimap.cpp">
+      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Contenedores\multiset.cpp">
+      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Contenedores\queue.cpp">
+      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Contenedores\stack.cpp">
+      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Contenedores\unorderedMap.cpp">
+      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Contenedores\unorderedSet.cpp">
+      <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Iteradores\inputoutput.cpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Iteradores\forward.cpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +205,9 @@
     </ClInclude>
     <ClInclude Include="LevelTwo\STL\Contenedores\contenedores.hpp">
       <Filter>Source Files\LevelTwo\STL\Contenedores</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelTwo\STL\Iteradores\iteradores.hpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
