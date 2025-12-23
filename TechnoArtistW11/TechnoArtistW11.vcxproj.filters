@@ -171,6 +171,12 @@
     <ClCompile Include="LevelTwo\STL\Iteradores\forward.cpp">
       <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
     </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Iteradores\bidireccional.cpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Iteradores\random.cpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">

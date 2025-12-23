@@ -96,7 +96,9 @@ int main() {
     //testContainers();
     //testIterator();
     //testInputOutputIterator();
-    testForwardIterator();
+    //testForwardIterator();
+    //testBidireccional();
+    testRandomIterator();
 
     return 0;
 }

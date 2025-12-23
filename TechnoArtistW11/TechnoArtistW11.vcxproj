@@ -164,9 +164,11 @@
     <ClCompile Include="LevelTwo\STL\Contenedores\testContainers.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\unorderedMap.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\unorderedSet.cpp" />
+    <ClCompile Include="LevelTwo\STL\Iteradores\bidireccional.cpp" />
     <ClCompile Include="LevelTwo\STL\Iteradores\forward.cpp" />
     <ClCompile Include="LevelTwo\STL\Iteradores\general.cpp" />
     <ClCompile Include="LevelTwo\STL\Iteradores\inputoutput.cpp" />
+    <ClCompile Include="LevelTwo\STL\Iteradores\random.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

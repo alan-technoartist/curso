@@ -5,13 +5,16 @@
 
 void testOutput() {
 
-	// iterador de salida
+	// iterador de salida (output)
 	std::ostream_iterator<int> iterador(std::cout);
 
 	std::vector<int> vect = { 2, 5, 62 };
 
 	for (auto v : vect) {
+		// escribir a la posicion actual
 		*iterador = v;
+
+		// avanzar a la siguiente posicion
 		++iterador;
 	}
 }
@@ -21,16 +24,20 @@ void testInput() {
 
 	std::istringstream flujoEntrada(texto);
 
-	// iterador de entrada
+	// iterador de entrada (input)
 	std::istream_iterator<std::string> iterador(flujoEntrada);
 	std::istream_iterator<std::string> fin;
 
+	// Acceso al elemento actual
 	std::cout << "Palabra: " << *iterador << std::endl;
 
+	// leer siguiente elemento
 	++iterador;
 
+	// Acceso al elemento actual
 	std::cout << "Palabra: " << *iterador << std::endl;
 
+	// Recorrer flujo
 	while (iterador != fin) {
 		std::cout << *iterador << std::endl;
 		++iterador;
