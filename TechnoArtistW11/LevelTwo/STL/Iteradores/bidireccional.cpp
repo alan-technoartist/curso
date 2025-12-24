@@ -2,6 +2,7 @@
 #include <list>
 
 void testBidireccional() {
+	// lista ligada doble
 	std::list<std::string> lista = { "Cuadro1", "Cuadro2", "Cuadro3" };
 
 	// iterador bidireccional

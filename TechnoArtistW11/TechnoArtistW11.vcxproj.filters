@@ -43,6 +43,9 @@
     <Filter Include="Source Files\LevelTwo\STL\Iteradores">
       <UniqueIdentifier>{a7232d47-66d9-4dab-a1da-dc877d804396}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LevelTwo\STL\Algoritmos">
+      <UniqueIdentifier>{88f0501f-10d1-43f9-bd37-fc1dcf3cf91d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LevelOne\array.cpp">
@@ -175,6 +178,9 @@
       <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
     </ClCompile>
     <ClCompile Include="LevelTwo\STL\Iteradores\random.cpp">
+      <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Iteradores\invalid.cpp">
       <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
     </ClCompile>
   </ItemGroup>

@@ -48,4 +48,5 @@ extern void testIterator(void);
 extern void testInputOutputIterator(void);
 extern void testForwardIterator(void);
 extern void testBidireccional(void);
-extern void testRandomIterator();
+extern void testRandomIterator(void);
+extern void testInvalidIterator(void);

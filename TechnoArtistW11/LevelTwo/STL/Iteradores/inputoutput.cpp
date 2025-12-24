@@ -11,7 +11,8 @@ void testOutput() {
 	std::vector<int> vect = { 2, 5, 62 };
 
 	for (auto v : vect) {
-		// escribir a la posicion actual
+		// escribir a la posicion actual 
+		// equivale a std::cout << v
 		*iterador = v;
 
 		// avanzar a la siguiente posicion

@@ -11,6 +11,7 @@ void testRandomIterator() {
 	std::cout << *it << std::endl;
 
 	// saltar iterador
+	// it += 3
 	it = it + 3;
 
 	// asignar elemento actual

@@ -98,7 +98,8 @@ int main() {
     //testInputOutputIterator();
     //testForwardIterator();
     //testBidireccional();
-    testRandomIterator();
+    //testRandomIterator();
+    testInvalidIterator();
 
     return 0;
 }
