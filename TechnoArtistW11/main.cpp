@@ -99,7 +99,8 @@ int main() {
     //testForwardIterator();
     //testBidireccional();
     //testRandomIterator();
-    testInvalidIterator();
+    //testInvalidIterator();
+    testAlgoritmosRO();
 
     return 0;
 }

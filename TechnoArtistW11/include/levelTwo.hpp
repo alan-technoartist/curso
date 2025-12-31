@@ -50,3 +50,4 @@ extern void testForwardIterator(void);
 extern void testBidireccional(void);
 extern void testRandomIterator(void);
 extern void testInvalidIterator(void);
+extern void testAlgoritmosRO(void);
