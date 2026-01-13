@@ -13,40 +13,42 @@ struct Transaccion {
 	}
 };
 
-bool esCritico(const Transaccion& t) {
-	return t.monto >= 10000;
-}
-
 void testAlgoritmosRO() {
 	// Ejemplo: análisis de transacciones bancarias
 
 	// Datos de prueba
-	std::vector<Transaccion> transacciones = {
-		{100, 800.0, "APROBADA"},
-		{101, 1200.5, "EN TRANSITO"},
-		{102, 1000, "RECHAZADA"},
-		{103, 15000.5, "APROBADA"},
-		{104, 100.4, "RECHAZADA"}
+	std::list<Transaccion> transacciones = {
+		{100, 800.0,	"APROBADA"},
+		{101, 1200.5,	"EN TRANSITO"},
+		{102, 1000,		"RECHAZADA"},
+		{103, 15000.5,	"APROBADA"},
+		{104, 100.4,	"RECHAZADA"}
 	};
 
-	// Hay montos críticos?
-	auto resultado = std::find_if(transacciones.begin(), transacciones.end(), esCritico);
+	//for (const auto& d : container)
 
-	std::cout << "Transaccion critica: #" << resultado->id << ": $" << resultado->monto << std::endl;
+	// Hay montos críticos? (any_of ?)
+	bool resultado = std::any_of(transacciones.begin(), transacciones.end(),
+		[](const auto& t) {	return (t.monto > 20000); } );
 
-	// Rechazos
-	Transaccion tRechazada;
-	tRechazada.estado = "RECHAZADA";
+	if (resultado == true)
+		std::cout << "Transaccion critica encontrada!" << std::endl;
 
-	resultado = std::find(transacciones.begin(), transacciones.end(), tRechazada);
+	// Rechazos (count_if)
+	auto rechazos = std::count_if(transacciones.begin(), transacciones.end(),
+		[](const auto& t) { return (t.estado == "RECHAZADA"); });
 
-	std::cout << "Transaccion rechazada: #" << resultado->id << std::endl;
+	std::cout << "Transacciones rechazadas: " << rechazos << std::endl;
 
-	// Siguiente a revisar
+	//resultado = std::find(transacciones.begin(), transacciones.end(), tRechazada);
 
-	// Total
+	//std::cout << "Transaccion rechazada: #" << resultado->id << std::endl;
 
-	// Mayor transacción
+	// Siguiente a revisar (find_if)
 
-	// for_each
+	// Total (accumulate)
+
+	// Mayor transacción (max_element)
+
+	// Imprimir transacciones (for_each)
 }
