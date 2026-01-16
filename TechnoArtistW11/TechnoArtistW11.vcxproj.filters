@@ -186,6 +186,9 @@
     <ClCompile Include="LevelTwo\STL\Algoritmos\readOnly.cpp">
       <Filter>Source Files\LevelTwo\STL\Algoritmos</Filter>
     </ClCompile>
+    <ClCompile Include="LevelTwo\STL\Algoritmos\modifiers.cpp">
+      <Filter>Source Files\LevelTwo\STL\Algoritmos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">

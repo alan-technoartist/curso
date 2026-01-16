@@ -153,6 +153,7 @@
     <ClCompile Include="LevelTwo\references.cpp" />
     <ClCompile Include="LevelTwo\smartPointers.cpp" />
     <ClCompile Include="LevelTwo\static.cpp" />
+    <ClCompile Include="LevelTwo\STL\Algoritmos\modifiers.cpp" />
     <ClCompile Include="LevelTwo\STL\Algoritmos\readOnly.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\deque.cpp" />
     <ClCompile Include="LevelTwo\STL\Contenedores\list.cpp" />

@@ -100,7 +100,8 @@ int main() {
     //testBidireccional();
     //testRandomIterator();
     //testInvalidIterator();
-    testAlgoritmosRO();
+    //testAlgoritmosRO();
+    testModifiers();
 
     return 0;
 }

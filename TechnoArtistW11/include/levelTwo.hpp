@@ -51,3 +51,4 @@ extern void testBidireccional(void);
 extern void testRandomIterator(void);
 extern void testInvalidIterator(void);
 extern void testAlgoritmosRO(void);
+extern void testModifiers(void);
