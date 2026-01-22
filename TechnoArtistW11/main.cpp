@@ -102,8 +102,8 @@ int main() {
     //testInvalidIterator();
     //testAlgoritmosRO();
     //testModifiers();
-    testLambda();
-    //testFiles();
+   //testLambda();
+    testFiles();
 
     return 0;
 }

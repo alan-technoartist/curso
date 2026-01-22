@@ -137,10 +137,10 @@
     <ClCompile Include="LevelOne\struct.cpp" />
     <ClCompile Include="LevelOne\types.cpp" />
     <ClCompile Include="LevelOne\vector.cpp" />
+    <ClCompile Include="LevelTwo\Archivos\files.cpp" />
     <ClCompile Include="LevelTwo\exception.cpp" />
     <ClCompile Include="LevelTwo\exception2.cpp" />
     <ClCompile Include="LevelTwo\factory.cpp" />
-    <ClCompile Include="LevelTwo\files.cpp" />
     <ClCompile Include="LevelTwo\inheritance.cpp" />
     <ClCompile Include="LevelTwo\Inventario\sistemaInventario.cpp" />
     <ClCompile Include="LevelTwo\Inventario\src\Excepciones.cpp" />

@@ -46,6 +46,9 @@
     <Filter Include="Source Files\LevelTwo\STL\Algoritmos">
       <UniqueIdentifier>{88f0501f-10d1-43f9-bd37-fc1dcf3cf91d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LevelTwo\Archivos">
+      <UniqueIdentifier>{2a0e2401-30cb-426c-85d1-61d0ae6bccaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LevelOne\array.cpp">
@@ -189,11 +192,11 @@
     <ClCompile Include="LevelTwo\STL\Algoritmos\modifiers.cpp">
       <Filter>Source Files\LevelTwo\STL\Algoritmos</Filter>
     </ClCompile>
-    <ClCompile Include="LevelTwo\files.cpp">
-      <Filter>Source Files\LevelTwo</Filter>
-    </ClCompile>
     <ClCompile Include="LevelTwo\STL\Algoritmos\lambda.cpp">
       <Filter>Source Files\LevelTwo\STL\Algoritmos</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\Archivos\files.cpp">
+      <Filter>Source Files\LevelTwo\Archivos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
