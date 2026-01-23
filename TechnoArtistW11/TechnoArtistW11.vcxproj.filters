@@ -198,6 +198,9 @@
     <ClCompile Include="LevelTwo\Archivos\files.cpp">
       <Filter>Source Files\LevelTwo\Archivos</Filter>
     </ClCompile>
+    <ClCompile Include="LevelTwo\Archivos\bmp.cpp">
+      <Filter>Source Files\LevelTwo\Archivos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">

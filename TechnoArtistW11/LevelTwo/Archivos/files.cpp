@@ -3,17 +3,28 @@
 #include <fstream>
 #include <string>
 
+struct Tarea {
+	int id;
+	char descripcion[50];
+	bool realizada;
+};
+
 void agregarTarea() {
-	std::ofstream archivo("ejemplo.txt", std::ios::app);
+	std::ofstream archivo("ejemplo.bin", std::ios::binary | std::ios::app);
 
 	if (archivo.is_open()) {
-		std::string tarea;
+		Tarea tarea;
 
-		std::cout << "Introduzca tarea: ";
+		std::cout << "Introduzca ID: ";
+		std::cin >> tarea.id;
+
+		std::cout << "Introduzca descripcion: ";
 		std::cin.ignore();
-		std::getline(std::cin, tarea);
+		std::cin.getline(tarea.descripcion, 50);
 
-		archivo << tarea << std::endl;
+		tarea.realizada = false;
+
+		archivo.write(reinterpret_cast<char*>(&tarea), sizeof(tarea));
 
 		archivo.close();
 	}
@@ -24,14 +35,14 @@ void agregarTarea() {
 }
 
 void mostrarTareas() {
-	std::ifstream lectura("ejemplo.txt");
-	std::string datosArchivo;
+	std::ifstream archivo("ejemplo.bin", std::ios::binary);
+	Tarea tarea;
 
-	if (lectura.is_open()) {
-		while (std::getline(lectura, datosArchivo)) {
-			std::cout << datosArchivo << std::endl;
+	if (archivo.is_open()) {
+		while (archivo.read(reinterpret_cast<char*>(&tarea), sizeof(Tarea))) {
+			std::cout << tarea.realizada << " " << tarea.id << "\t" << tarea.descripcion << std::endl;
 		}
-		lectura.close();
+		archivo.close();
 	}
 	else {
 		std::cerr << "Error al abrir el archivo" << std::endl;

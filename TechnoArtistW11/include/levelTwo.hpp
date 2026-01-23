@@ -54,3 +54,4 @@ extern void testAlgoritmosRO(void);
 extern void testModifiers(void);
 extern void testLambda(void);
 extern void testFiles(void);
+extern void testBMP(void);
