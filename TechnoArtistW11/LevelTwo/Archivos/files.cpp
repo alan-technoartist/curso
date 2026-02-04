@@ -35,7 +35,9 @@ int calcularNuevoId(std::fstream& archivo) {
 }
 
 void agregarTarea() {
-	std::fstream archivo("ejemplo.bin", std::ios::binary | std::ios::in | std::ios::app);
+	std::fstream archivo("ejemplo.bin", std::ios::binary |
+										std::ios::in |
+										std::ios::app);
 
 	if (archivo.is_open()) {
 		Tarea tarea;
@@ -154,6 +156,39 @@ void modificarTarea() {
 	}
 }
 
+void borrarTarea() {
+	std::ifstream archivoOriginal("ejemplo.bin", std::ios::binary);
+	std::ofstream archivoTemporal("temp.bin", std::ios::binary);
+
+	if (archivoOriginal.is_open() && archivoTemporal.is_open()) {
+		Tarea tarea;
+		int id;
+
+		std::cout << "Introduzca ID: ";
+		std::cin >> id;
+
+		while (archivoOriginal.read(reinterpret_cast<char*>(&tarea), sizeof(Tarea))) {
+
+			if (id != tarea.id) {
+				// Escribir al archivo temporal
+				archivoTemporal.write(reinterpret_cast<char*>(&tarea), sizeof(Tarea));
+			}
+			else {
+				
+			}
+
+		}
+		archivoOriginal.close();
+		archivoTemporal.close();
+
+		std::remove("ejemplo.bin");
+		std::rename("temp.bin", "ejemplo.bin");
+	}
+	else {
+		std::cerr << "Error al abrir el archivo" << std::endl;
+	}
+}
+
 void testFiles() {
 	int opcion;
 
@@ -162,7 +197,8 @@ void testFiles() {
 		std::cout << "2 - Mostrar tareas" << std::endl;
 		std::cout << "3 - Marcar terminada" << std::endl;
 		std::cout << "4 - Modificar tarea" << std::endl;
-		std::cout << "5 - Salir" << std::endl;
+		std::cout << "5 - Borrar tarea" << std::endl;
+		std::cout << "6 - Salir" << std::endl;
 		std::cout << "> ";
 
 		std::cin >> opcion;
@@ -175,7 +211,9 @@ void testFiles() {
 			marcarTerminada();
 		else if (opcion == 4)
 			modificarTarea();
+		else if (opcion == 5)
+			borrarTarea();
 
-	} while (opcion != 5);
+	} while (opcion != 6);
 
 }
