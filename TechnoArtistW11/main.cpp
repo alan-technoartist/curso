@@ -102,8 +102,14 @@ int main() {
     //testInvalidIterator();
     //testAlgoritmosRO();
     //testModifiers();
-   //testLambda();
-    testFiles();
+    //testLambda();
+     
+    /* Files */
+    //testFiles();
+    //testBMP();
+
+    /* Database */
+    testMySQL();
 
     return 0;
 }

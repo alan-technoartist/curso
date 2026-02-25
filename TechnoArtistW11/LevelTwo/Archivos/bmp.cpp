@@ -22,6 +22,7 @@ void testBMP() {
 
     cabecera[18] = (unsigned char)(ancho);
     cabecera[19] = (unsigned char)(ancho >> 8);
+
     cabecera[22] = (unsigned char)(alto);
     cabecera[23] = (unsigned char)(alto >> 8);
 
@@ -39,7 +40,7 @@ void testBMP() {
 
         for (int i = 0; i < (ancho * alto); i++) {
             archivo.put(azul);
-            archivo.put(verde);
+            archivo.put(verde-i);
             archivo.put(rojo);
         }
 

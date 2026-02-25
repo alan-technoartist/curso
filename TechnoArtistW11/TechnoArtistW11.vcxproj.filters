@@ -25,9 +25,6 @@
     <Filter Include="Source Files\LevelTwo\Generic">
       <UniqueIdentifier>{bcb523fd-9c87-4b58-87e6-a10685de65de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\LevelTwo\Algo">
-      <UniqueIdentifier>{9c4ad8dd-b703-4cdd-8713-1091b5f256bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\LevelTwo\STL">
       <UniqueIdentifier>{aafc7c08-44f5-403c-84f9-d7245facc53c}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     </Filter>
     <Filter Include="Source Files\LevelTwo\Archivos">
       <UniqueIdentifier>{2a0e2401-30cb-426c-85d1-61d0ae6bccaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LevelTwo\BD">
+      <UniqueIdentifier>{888a726c-692e-43df-9e44-2bc90074ac86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +200,9 @@
     </ClCompile>
     <ClCompile Include="LevelTwo\Archivos\bmp.cpp">
       <Filter>Source Files\LevelTwo\Archivos</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\BD\mysql.cpp">
+      <Filter>Source Files\LevelTwo\BD</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
