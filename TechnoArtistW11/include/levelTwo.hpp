@@ -56,3 +56,4 @@ extern void testLambda(void);
 extern void testFiles(void);
 extern void testBMP(void);
 extern void testMySQL(void);
+extern void testSQLite(void);

@@ -109,7 +109,8 @@ int main() {
     //testBMP();
 
     /* Database */
-    testMySQL();
+    //testMySQL();
+    testSQLite();
 
     return 0;
 }

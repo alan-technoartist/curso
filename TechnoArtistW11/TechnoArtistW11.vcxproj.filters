@@ -204,6 +204,12 @@
     <ClCompile Include="LevelTwo\BD\mysql.cpp">
       <Filter>Source Files\LevelTwo\BD</Filter>
     </ClCompile>
+    <ClCompile Include="LevelTwo\BD\sqlite3.c">
+      <Filter>Source Files\LevelTwo\BD</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo\BD\sqliteCliente.cpp">
+      <Filter>Source Files\LevelTwo\BD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">
@@ -241,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="LevelTwo\STL\Iteradores\iteradores.hpp">
       <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sqlite3.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

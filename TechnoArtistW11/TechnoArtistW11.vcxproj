@@ -146,6 +146,8 @@
     <ClCompile Include="LevelTwo\Archivos\bmp.cpp" />
     <ClCompile Include="LevelTwo\Archivos\files.cpp" />
     <ClCompile Include="LevelTwo\BD\mysql.cpp" />
+    <ClCompile Include="LevelTwo\BD\sqlite3.c" />
+    <ClCompile Include="LevelTwo\BD\sqliteCliente.cpp" />
     <ClCompile Include="LevelTwo\exception.cpp" />
     <ClCompile Include="LevelTwo\exception2.cpp" />
     <ClCompile Include="LevelTwo\factory.cpp" />
@@ -187,6 +189,7 @@
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp" />
     <ClInclude Include="include\levelTwo.hpp" />
+    <ClInclude Include="include\sqlite3.h" />
     <ClInclude Include="LevelTwo\Generic\concepts.hpp" />
     <ClInclude Include="LevelTwo\Generic\templates.hpp" />
     <ClInclude Include="LevelTwo\Inventario\include\Conexion.hpp" />
