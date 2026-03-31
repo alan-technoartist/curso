@@ -49,6 +49,9 @@
     <Filter Include="Source Files\LevelTwo\BD">
       <UniqueIdentifier>{888a726c-692e-43df-9e44-2bc90074ac86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LevelThree">
+      <UniqueIdentifier>{fefa7b26-4d18-4069-8cf8-3ba25aec8bec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LevelOne\array.cpp">
@@ -210,6 +213,9 @@
     <ClCompile Include="LevelTwo\BD\sqliteCliente.cpp">
       <Filter>Source Files\LevelTwo\BD</Filter>
     </ClCompile>
+    <ClCompile Include="LevelThree\Patterns\Observer.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">
@@ -249,6 +255,9 @@
       <Filter>Source Files\LevelTwo\STL\Iteradores</Filter>
     </ClInclude>
     <ClInclude Include="include\sqlite3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\levelThree.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

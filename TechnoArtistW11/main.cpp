@@ -2,11 +2,11 @@
 
 #include "include/levelOne.hpp"
 #include "include/levelTwo.hpp"
+#include "include/levelThree.hpp"
 
 int main() {
     /* Tipos de datos */
     //autoType();
-
 
     /* Bucles */
     //forLoop();
@@ -110,7 +110,9 @@ int main() {
 
     /* Database */
     //testMySQL();
-    testSQLite();
+    //testSQLite();
+
+    testObserver();
 
     return 0;
 }

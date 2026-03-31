@@ -143,6 +143,7 @@
     <ClCompile Include="LevelOne\struct.cpp" />
     <ClCompile Include="LevelOne\types.cpp" />
     <ClCompile Include="LevelOne\vector.cpp" />
+    <ClCompile Include="LevelThree\Patterns\Observer.cpp" />
     <ClCompile Include="LevelTwo\Archivos\bmp.cpp" />
     <ClCompile Include="LevelTwo\Archivos\files.cpp" />
     <ClCompile Include="LevelTwo\BD\mysql.cpp" />
@@ -188,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp" />
+    <ClInclude Include="include\levelThree.hpp" />
     <ClInclude Include="include\levelTwo.hpp" />
     <ClInclude Include="include\sqlite3.h" />
     <ClInclude Include="LevelTwo\Generic\concepts.hpp" />
