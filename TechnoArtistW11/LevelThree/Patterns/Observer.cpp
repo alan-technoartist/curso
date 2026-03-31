@@ -27,15 +27,15 @@ public:
 
 class Fuente {
 public:
-	std::list<IObserver*> observadores;
+	std::list<std::shared_ptr<IObserver>> observadores;
 
-	void registrarSuscriptor(IObserver* obs) {
+	void registrarSuscriptor(std::shared_ptr<IObserver> obs) {
 		observadores.push_back(obs);
 	}
 
-	void desregistrarSuscriptor(IObserver* obs) {
+	void desregistrarSuscriptor(std::shared_ptr<IObserver> obs) {
 
-		observadores.remove_if([&obs](IObserver* actual) {
+		observadores.remove_if([&obs](std::shared_ptr<IObserver> actual) {
 			if (obs == actual)
 				return true;
 			return false;
@@ -45,7 +45,7 @@ public:
 	void notificarSuscriptores() {
 
 		// Notificar observadores
-		for (IObserver* observador : observadores) {
+		for (auto& observador : observadores) {
 			observador->recibirNotificacion();
 		}
 	}
@@ -54,15 +54,15 @@ public:
 void testObserver() {
 	Fuente fuente;
 
-	ObservadorTipo1 observador1;
-	ObservadorTipo2 observador2;
+	std::shared_ptr<IObserver> observador1 = std::make_shared<ObservadorTipo1>();
+	std::shared_ptr<IObserver> observador2 = std::make_shared<ObservadorTipo2>();
 
-	fuente.registrarSuscriptor(&observador1);
-	fuente.registrarSuscriptor(&observador2);
+	fuente.registrarSuscriptor(observador1);
+	fuente.registrarSuscriptor(observador2);
 
 	fuente.notificarSuscriptores();
 
-	fuente.desregistrarSuscriptor(&observador1);
+	fuente.desregistrarSuscriptor(observador1);
 
 	fuente.notificarSuscriptores();
 
