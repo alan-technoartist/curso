@@ -29,12 +29,17 @@ class Fuente {
 public:
 	std::list<IObserver*> observadores;
 
-	void registrarSuscriptor(IObserver* o) {
-		observadores.push_back(o);
+	void registrarSuscriptor(IObserver* obs) {
+		observadores.push_back(obs);
 	}
 
-	void desregistrarSuscriptor() {
-		//observadores.remove_if();
+	void desregistrarSuscriptor(IObserver* obs) {
+
+		observadores.remove_if([&obs](IObserver* actual) {
+			if (obs == actual)
+				return true;
+			return false;
+		});
 	}
 
 	void notificarSuscriptores() {
@@ -56,5 +61,10 @@ void testObserver() {
 	fuente.registrarSuscriptor(&observador2);
 
 	fuente.notificarSuscriptores();
+
+	fuente.desregistrarSuscriptor(&observador1);
+
+	fuente.notificarSuscriptores();
+
 
 }
