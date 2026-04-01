@@ -112,7 +112,8 @@ int main() {
     //testMySQL();
     //testSQLite();
 
-    testObserver();
+    //testObserver();
+    testAdapter();
 
     return 0;
 }

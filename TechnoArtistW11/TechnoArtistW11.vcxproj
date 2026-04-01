@@ -143,6 +143,8 @@
     <ClCompile Include="LevelOne\struct.cpp" />
     <ClCompile Include="LevelOne\types.cpp" />
     <ClCompile Include="LevelOne\vector.cpp" />
+    <ClCompile Include="LevelThree\Patterns\Adapter.cpp" />
+    <ClCompile Include="LevelThree\Patterns\Command.cpp" />
     <ClCompile Include="LevelThree\Patterns\Observer.cpp" />
     <ClCompile Include="LevelTwo\Archivos\bmp.cpp" />
     <ClCompile Include="LevelTwo\Archivos\files.cpp" />

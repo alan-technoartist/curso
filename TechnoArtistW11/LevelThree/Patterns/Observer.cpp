@@ -58,6 +58,7 @@ void testObserver() {
 	std::shared_ptr<IObserver> observador2 = std::make_shared<ObservadorTipo2>();
 
 	fuente.registrarSuscriptor(observador1);
+
 	fuente.registrarSuscriptor(observador2);
 
 	fuente.notificarSuscriptores();
@@ -65,6 +66,5 @@ void testObserver() {
 	fuente.desregistrarSuscriptor(observador1);
 
 	fuente.notificarSuscriptores();
-
 
 }

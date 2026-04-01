@@ -216,6 +216,12 @@
     <ClCompile Include="LevelThree\Patterns\Observer.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
+    <ClCompile Include="LevelThree\Patterns\Adapter.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelThree\Patterns\Command.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">
