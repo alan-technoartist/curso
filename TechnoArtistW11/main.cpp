@@ -113,7 +113,8 @@ int main() {
     //testSQLite();
 
     //testObserver();
-    testAdapter();
+    //testAdapter();
+    testCommand();
 
     return 0;
 }
