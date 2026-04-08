@@ -143,9 +143,10 @@
     <ClCompile Include="LevelOne\struct.cpp" />
     <ClCompile Include="LevelOne\types.cpp" />
     <ClCompile Include="LevelOne\vector.cpp" />
-    <ClCompile Include="LevelThree\Patterns\Adapter.cpp" />
-    <ClCompile Include="LevelThree\Patterns\Command.cpp" />
-    <ClCompile Include="LevelThree\Patterns\Observer.cpp" />
+    <ClCompile Include="LevelThree\Concurrent\threads.cpp" />
+    <ClCompile Include="LevelThree\Patterns\adapter.cpp" />
+    <ClCompile Include="LevelThree\Patterns\command.cpp" />
+    <ClCompile Include="LevelThree\Patterns\observer.cpp" />
     <ClCompile Include="LevelTwo\Archivos\bmp.cpp" />
     <ClCompile Include="LevelTwo\Archivos\files.cpp" />
     <ClCompile Include="LevelTwo\BD\mysql.cpp" />
