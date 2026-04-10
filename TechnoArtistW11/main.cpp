@@ -114,8 +114,8 @@ int main() {
 
     //testObserver();
     //testAdapter();
-    testCommand();
-    //testThread();
+    //testCommand();
+    testThread();
 
     return 0;
 }
