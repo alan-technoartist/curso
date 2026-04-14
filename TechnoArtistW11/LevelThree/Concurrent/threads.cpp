@@ -6,7 +6,7 @@ void funcionHilo(std::stop_token stop) {
 	while (!stop.stop_requested()) {
 		std::cout << "Ejecutando desde hilo secundario" << std::endl;
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
 	}
 	std::cout << "Hilo secundario termina" << std::endl;
@@ -14,13 +14,12 @@ void funcionHilo(std::stop_token stop) {
 }
 
 void testThread() {
-	std::cout << "Ejecutando hilo principal" << std::endl;
+	std::cout << "Lanzando hilo secundario" << std::endl;
 
-	for (int i = 0; i < 5; i++) {
-		std::jthread hilo1(funcionHilo);
+	// Objeto RAII
+	std::jthread hilo1(funcionHilo);
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-	}
-	
-	std::cout << "Hilo principal termina" << std::endl;
+	std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+
+	std::cout << "Fin de función, objeto hilo1 saliendo de ámbito..." << std::endl;
 }

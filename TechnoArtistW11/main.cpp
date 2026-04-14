@@ -115,7 +115,10 @@ int main() {
     //testObserver();
     //testAdapter();
     //testCommand();
-    testThread();
+    //testThread();
+    testMutex();
+
+    //std::cout << "Fin de main" << std::endl;
 
     return 0;
 }

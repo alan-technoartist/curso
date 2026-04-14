@@ -143,6 +143,7 @@
     <ClCompile Include="LevelOne\struct.cpp" />
     <ClCompile Include="LevelOne\types.cpp" />
     <ClCompile Include="LevelOne\vector.cpp" />
+    <ClCompile Include="LevelThree\Concurrent\mutex.cpp" />
     <ClCompile Include="LevelThree\Concurrent\threads.cpp" />
     <ClCompile Include="LevelThree\Patterns\adapter.cpp" />
     <ClCompile Include="LevelThree\Patterns\command.cpp" />

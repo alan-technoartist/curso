@@ -225,6 +225,9 @@
     <ClCompile Include="LevelThree\Concurrent\threads.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
+    <ClCompile Include="LevelThree\Concurrent\mutex.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">
