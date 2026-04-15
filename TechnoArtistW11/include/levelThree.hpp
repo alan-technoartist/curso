@@ -4,3 +4,4 @@ extern void testCommand();
 
 extern void testThread();
 extern void testMutex();
+extern void testAtm();

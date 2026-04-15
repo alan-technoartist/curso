@@ -116,7 +116,8 @@ int main() {
     //testAdapter();
     //testCommand();
     //testThread();
-    testMutex();
+    //testMutex();
+    testAtm();
 
     //std::cout << "Fin de main" << std::endl;
 

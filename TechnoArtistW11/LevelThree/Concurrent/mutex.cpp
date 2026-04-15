@@ -6,16 +6,13 @@ std::mutex mtx;
 
 void imprimirTexto(std::string texto) {
 
-	mtx.lock();
+	// Objeto RAII
+	std::unique_lock<std::mutex> lock(mtx);
 
 	// Sección crítica
 	for (auto c : texto) {
 		std::cout << c;
 	}
-
-	throw;
-
-	mtx.unlock();
 
 }
 
@@ -23,4 +20,6 @@ void testMutex() {
 
 	std::jthread hilo1(imprimirTexto, "Hola");
 	std::jthread hilo2(imprimirTexto, "Mundo");
+
+	std::cout << "Fin de ambito de hilos" << std::endl;
 }
