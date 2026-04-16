@@ -117,7 +117,8 @@ int main() {
     //testCommand();
     //testThread();
     //testMutex();
-    testAtm();
+    //testAtm();
+    testDeadlock();
 
     //std::cout << "Fin de main" << std::endl;
 

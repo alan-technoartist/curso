@@ -231,6 +231,9 @@
     <ClCompile Include="LevelThree\Concurrent\atm.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
+    <ClCompile Include="LevelThree\Concurrent\deadlock.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">

@@ -144,6 +144,7 @@
     <ClCompile Include="LevelOne\types.cpp" />
     <ClCompile Include="LevelOne\vector.cpp" />
     <ClCompile Include="LevelThree\Concurrent\atm.cpp" />
+    <ClCompile Include="LevelThree\Concurrent\deadlock.cpp" />
     <ClCompile Include="LevelThree\Concurrent\mutex.cpp" />
     <ClCompile Include="LevelThree\Concurrent\threads.cpp" />
     <ClCompile Include="LevelThree\Patterns\adapter.cpp" />
