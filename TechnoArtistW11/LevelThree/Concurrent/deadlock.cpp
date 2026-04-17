@@ -2,32 +2,33 @@
 #include <thread>
 #include <mutex>
 
-struct Cubierto {
+class Dispositivo {
+private:
 	std::mutex mtx;
 	std::string nombre;
 
-	Cubierto(std::string s) : nombre(s) {}
+public:
+	Dispositivo(std::string s) : nombre(s) {}
+
+	std::mutex& getMutex() {
+		return mtx;
+	}
 };
 
+void tareaOficina(Dispositivo& escaner, Dispositivo& impresora, std::string nombrePersona) {
+	std::cout << nombrePersona << "Va a ejectuar tareaOficina" << std::endl;
+
+	std::scoped_lock<std::mutex, std::mutex> lock(escaner.getMutex(), impresora.getMutex());
+
+	std::cout << nombrePersona << "Obtuvo los dispositivos" << std::endl;
+
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+}
+
 void testDeadlock() {
-	Cubierto cuchillo("Cuchillo");
-	Cubierto tenedor("Tenedor");
+	Dispositivo escaner("Escaner");
+	Dispositivo impresora("Impresora");
 
-	std::jthread persona1([&]() {
-		std::scoped_lock<std::mutex, std::mutex> lock1(cuchillo.mtx, tenedor.mtx);
-
-		std::cout << "Persona 1 obtuvo cubiertos" << std::endl;
-
-		//std::this_thread::sleep_for(std::chrono::seconds(1));
-
-		});
-
-	std::jthread persona2([&]() {
-		std::scoped_lock<std::mutex, std::mutex> lock1(tenedor.mtx, cuchillo.mtx);
-
-		std::cout << "Persona 2 obtuvo cubiertos" << std::endl;
-
-		//std::this_thread::sleep_for(std::chrono::seconds(1));
-
-		});
+	std::jthread persona1(tareaOficina, std::ref(escaner), std::ref(impresora), "Alan");
+	std::jthread persoan2(tareaOficina, std::ref(escaner), std::ref(impresora), "Armando");
 }
