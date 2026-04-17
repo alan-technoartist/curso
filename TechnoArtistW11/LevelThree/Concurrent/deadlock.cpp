@@ -2,27 +2,32 @@
 #include <thread>
 #include <mutex>
 
+struct Cubierto {
+	std::mutex mtx;
+	std::string nombre;
+
+	Cubierto(std::string s) : nombre(s) {}
+};
 
 void testDeadlock() {
+	Cubierto cuchillo("Cuchillo");
+	Cubierto tenedor("Tenedor");
 
-	std::mutex mutex1;
-	std::mutex mutex2;
+	std::jthread persona1([&]() {
+		std::scoped_lock<std::mutex, std::mutex> lock1(cuchillo.mtx, tenedor.mtx);
 
-	std::jthread hilo1([&]() {
-		std::lock_guard<std::mutex> lock1(mutex1);
-		// Zona crítica aquí
-		// ...
+		std::cout << "Persona 1 obtuvo cubiertos" << std::endl;
 
-		std::lock_guard<std::mutex> lock2(mutex2);
+		//std::this_thread::sleep_for(std::chrono::seconds(1));
+
 		});
 
-	std::jthread hilo2([&]() {
-		std::lock_guard<std::mutex> lock1(mutex2);
-		// Zona crítica aquí
+	std::jthread persona2([&]() {
+		std::scoped_lock<std::mutex, std::mutex> lock1(tenedor.mtx, cuchillo.mtx);
 
-		// ...
+		std::cout << "Persona 2 obtuvo cubiertos" << std::endl;
 
-		std::lock_guard<std::mutex> lock2(mutex1);
+		//std::this_thread::sleep_for(std::chrono::seconds(1));
 
 		});
 }
