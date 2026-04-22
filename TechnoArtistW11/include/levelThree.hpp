@@ -6,3 +6,4 @@ extern void testThread();
 extern void testMutex();
 extern void testAtm();
 extern void testDeadlock();
+extern void testFuturePromise();

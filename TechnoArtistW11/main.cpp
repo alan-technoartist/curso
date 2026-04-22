@@ -118,7 +118,8 @@ int main() {
     //testThread();
     //testMutex();
     //testAtm();
-    testDeadlock();
+    //testDeadlock();
+    testFuturePromise();
 
     //std::cout << "Fin de main" << std::endl;
 
