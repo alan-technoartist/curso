@@ -1,36 +1,22 @@
 #include <iostream>
 #include <thread>
 #include <future>
-
-int funcionSecundaria() {
-	std::cout << "Ejecutando funcion en hilo secundario... " << std::endl;
-
-	for (int i = 0; i < 5; i++) {
-		std::cout << "Hilo secundario calculando... " << std::endl;
-		std::this_thread::sleep_for(std::chrono::seconds(5));
-	}
-	
-	std::cout << "Terminando hilo secundario... " << std::endl;
-
-	return 22;
-}
+#include <numeric>
 
 void testFuturePromise() {
-	// El objeto promise es manejado automáticamente por std::async
-	auto resultado = std::async(std::launch::async, funcionSecundaria);
+	std::vector<double> datos = { 1.4, 2.5, 3.3 };
 
-	std::cout << "Hilo 1 comienza trabajo..." << std::endl;
+	auto promedioDatos = std::async(std::launch::deferred, [&datos]() {
+		
+		double sumaDatos = std::accumulate(datos.begin(), datos.end(), 0.0);
+		double promedioDatos = sumaDatos / static_cast<double>(datos.size());
 
-	while (resultado.wait_for(std::chrono::seconds(1)) != std::future_status::ready) {
+		return promedioDatos;
 
-		std::cout << "Hilo 1 sigue trabajando..." << std::endl;
+		});
 
-		std::this_thread::sleep_for(std::chrono::seconds(3));
+	std::cout << "Hilo principal sigue trabajando" << std::endl;
+	std::this_thread::sleep_for(std::chrono::seconds(5));
 
-	}
-
-	// get() bloquea al hilo actual
-	int resultadoHilo2 = resultado.get();
-
-	std::cout << "Resultado del hilo 2: " << resultadoHilo2 << std::endl;
+	std::cout << "Resultado: " << promedioDatos.get() << std::endl;
 }
