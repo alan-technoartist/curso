@@ -132,6 +132,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="asio.cpp" />
+    <ClCompile Include="corutina.cpp" />
     <ClCompile Include="LevelOne\array.cpp" />
     <ClCompile Include="LevelOne\cast.cpp" />
     <ClCompile Include="LevelOne\class.cpp" />
@@ -147,6 +149,7 @@
     <ClCompile Include="LevelThree\Concurrent\deadlock.cpp" />
     <ClCompile Include="LevelThree\Concurrent\futurePromise.cpp" />
     <ClCompile Include="LevelThree\Concurrent\mutex.cpp" />
+    <ClCompile Include="LevelThree\Concurrent\pool.cpp" />
     <ClCompile Include="LevelThree\Concurrent\threads.cpp" />
     <ClCompile Include="LevelThree\Patterns\adapter.cpp" />
     <ClCompile Include="LevelThree\Patterns\command.cpp" />

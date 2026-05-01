@@ -119,7 +119,11 @@ int main() {
     //testMutex();
     //testAtm();
     //testDeadlock();
-    testFuturePromise();
+    //testFuturePromise();
+
+    //testPool();
+    //testCorutina();
+    testAsio();
 
     //std::cout << "Fin de main" << std::endl;
 

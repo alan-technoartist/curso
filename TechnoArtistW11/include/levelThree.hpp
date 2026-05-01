@@ -7,3 +7,7 @@ extern void testMutex();
 extern void testAtm();
 extern void testDeadlock();
 extern void testFuturePromise();
+extern void testCorutina();
+extern void testAsio();
+
+extern void testPool();
