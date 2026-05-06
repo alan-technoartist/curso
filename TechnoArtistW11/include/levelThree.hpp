@@ -9,5 +9,4 @@ extern void testDeadlock();
 extern void testFuturePromise();
 extern void testCorutina();
 extern void testAsio();
-
-extern void testPool();
+extern void testAsioClient();

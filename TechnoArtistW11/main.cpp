@@ -124,6 +124,8 @@ int main() {
     //testPool();
     //testCorutina();
     testAsio();
+    //testAsioClient();
+
 
     //std::cout << "Fin de main" << std::endl;
 

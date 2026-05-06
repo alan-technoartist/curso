@@ -240,10 +240,13 @@
     <ClCompile Include="LevelThree\Concurrent\pool.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
-    <ClCompile Include="corutina.cpp">
+    <ClCompile Include="LevelThree\Net\asioServer.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
-    <ClCompile Include="asio.cpp">
+    <ClCompile Include="LevelThree\Concurrent\corutina.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelThree\Net\asioClient.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
   </ItemGroup>
