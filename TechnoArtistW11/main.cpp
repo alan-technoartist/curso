@@ -123,8 +123,8 @@ int main() {
 
     //testPool();
     //testCorutina();
-    testAsio();
-    //testAsioClient();
+    //testAsio();
+    testAsioClient();
 
 
     //std::cout << "Fin de main" << std::endl;

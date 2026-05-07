@@ -3,43 +3,41 @@
 
 using namespace boost::asio;
 
+boost::asio::awaitable<void> comunicarCliente(io_context& io_context) {
+
+    // Socket TCP
+    ip::tcp::socket socket(io_context);
+
+    // "Resolutor" traduce (resuelve) a direcciones IP + puerto
+    ip::tcp::resolver resolutor(io_context);
+
+    std::cout << "Resolviendo ruta al servidor en \"segundo plano\"..." << std::endl;
+
+    auto endpoint = co_await resolutor.async_resolve("localhost", "5000");
+
+    std::cout << "Conectando al servidor \"segundo plano\"..." << std::endl;
+
+    co_await boost::asio::async_connect(socket, endpoint);
+
+    std::cout << "Leyendo datos \"segundo plano\"..." << std::endl;
+
+    char buffer[128];
+
+    co_await socket.async_read_some(boost::asio::buffer(buffer));
+
+    std::cout << "Datos del servidor: ";
+
+    std::cout << buffer << std::endl;
+
+    std::this_thread::sleep_for(std::chrono::seconds(5));
+
+}
+
 void testAsioClient() {
         // Objeto para despacho de eventos asíncronos
         io_context io_context;
 
-        // Socket TCP
-        ip::tcp::socket socket(io_context);
-
-        // "Resolutor" traduce (resuelve) a direcciones IP + puerto
-        ip::tcp::resolver resolver(io_context);
-
-        resolver.async_resolve("localhost", "5000",
-            [&socket](boost::system::error_code ec, ip::tcp::resolver::results_type results) {
-                if (ec) return;
-
-                std::cout << "Conectando al servidor..." << std::endl;
-
-                boost::asio::async_connect(socket, results,
-                    [&socket](boost::system::error_code ec, const ip::tcp::endpoint& endpoint) {
-                        if (ec) return;
-
-                        std::cout << "Leyendo datos..." << std::endl;
-
-                        // Usamos shared_ptr para que el buffer viva lo suficiente
-                        auto buffer = std::make_shared<std::array<char, 128>>();
-
-                        socket.async_read_some(boost::asio::buffer(*buffer),
-                            [buffer](boost::system::error_code ec, std::size_t bytes_transferred) {
-                                if (!ec) {
-                                    std::cout << "Datos del servidor: ";
-                                    // Escribimos solo los bytes recibidos para evitar basura
-                                    std::cout.write(buffer->data(), bytes_transferred);
-                                    std::cout << std::endl;
-                                }
-                            });
-                    });
-
-            });
+        boost::asio::co_spawn(io_context, comunicarCliente(io_context), detached);
 
         std::cout << "Encendiendo motor de ASIO" << std::endl;
 
