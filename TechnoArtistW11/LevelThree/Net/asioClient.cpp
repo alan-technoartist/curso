@@ -13,7 +13,7 @@ boost::asio::awaitable<void> comunicarCliente(io_context& io_context) {
 
     std::cout << "Resolviendo ruta al servidor en \"segundo plano\"..." << std::endl;
 
-    auto endpoint = co_await resolutor.async_resolve("localhost", "5000");
+    auto endpoint = co_await resolutor.async_resolve("192.168.0.134", "9090");
 
     std::cout << "Conectando al servidor \"segundo plano\"..." << std::endl;
 
