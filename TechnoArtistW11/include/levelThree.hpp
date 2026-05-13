@@ -10,3 +10,5 @@ extern void testFuturePromise();
 extern void testCorutina();
 extern void testAsio();
 extern void testAsioClient();
+
+extern void testProfiling();

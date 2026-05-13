@@ -249,6 +249,9 @@
     <ClCompile Include="LevelThree\Net\asioClient.cpp">
       <Filter>Source Files\LevelThree</Filter>
     </ClCompile>
+    <ClCompile Include="LevelThree\Memory\profiling.cpp">
+      <Filter>Source Files\LevelThree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\levelOne.hpp">

@@ -150,6 +150,7 @@
     <ClCompile Include="LevelThree\Concurrent\mutex.cpp" />
     <ClCompile Include="LevelThree\Concurrent\pool.cpp" />
     <ClCompile Include="LevelThree\Concurrent\threads.cpp" />
+    <ClCompile Include="LevelThree\Memory\profiling.cpp" />
     <ClCompile Include="LevelThree\Net\asioClient.cpp" />
     <ClCompile Include="LevelThree\Net\asioServer.cpp" />
     <ClCompile Include="LevelThree\Patterns\adapter.cpp" />

@@ -1,33 +1,22 @@
 #include <iostream>
 #include <vector>
-#include <thread>
 
-namespace Profiling {
-	class Arma;
+// gprof
+// Valgrind
 
-	class Personaje {
-	public:
-		std::shared_ptr<Arma> arma;
-		double datos[10000];
+class BaseDatos {
+	std::vector<std::vector<double>> datos;
 
-	};
-
-	class Arma {
-	public:
-		std::weak_ptr<Personaje> personaje;
-		double datos[10000];
-
-	};
-}
-using namespace Profiling;
+public:
+	void insertarDatos(std::vector<double> registro) {
+		datos.push_back(std::move(registro));
+	}
+};
 
 void testProfiling() {
-	auto personaje1 = std::make_shared<Personaje>();
-	auto arma1 = std::make_shared<Arma>();
+	std::unique_ptr<BaseDatos> bd = std::make_unique<BaseDatos>();
 
-	personaje1->arma = arma1;
-	arma1->personaje = personaje1;
+	std::vector<double> fuenteDatos(10000, 2.2);
 
-	arma1->personaje.lock()->datos[2];
-
+	bd->insertarDatos(fuenteDatos);
 }
