@@ -215,6 +215,9 @@
     <ClInclude Include="LevelTwo\STL\Contenedores\contenedores.hpp" />
     <ClInclude Include="LevelTwo\STL\Iteradores\iteradores.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="LevelThree\IA\basicTF.py" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

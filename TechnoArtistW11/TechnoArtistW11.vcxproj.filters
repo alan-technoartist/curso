@@ -297,4 +297,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="LevelThree\IA\basicTF.py">
+      <Filter>Source Files\LevelThree</Filter>
+    </None>
+  </ItemGroup>
 </Project>
