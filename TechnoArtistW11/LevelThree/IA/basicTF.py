@@ -62,3 +62,19 @@ for i in range(4):
     clase_final = 1 if prob >= 0.5 else 0
     
     print(f"Entrada: {X[i]} -> Target: {T[i][0]} | Prob: {prob:.4f} | Prediccion Final: {clase_final}")
+
+
+print("[INFO] Convirtiendo el modelo a formato LiteRT (.tflite)...")
+
+# 1. Crear el convertidor usando tu modelo de Keras
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+
+# 2. (Opcional pero recomendado) Optimizar el modelo para que sea más rápido
+converter.optimizations = [tf.lite.Optimize.DEFAULT]
+
+# 3. Realizar la conversión
+tflite_model = converter.convert()
+
+# 4. Guardar el archivo binario en tu disco duro
+with open("C:\modelo_xor.tflite", "wb") as f:
+    f.write(tflite_model)
