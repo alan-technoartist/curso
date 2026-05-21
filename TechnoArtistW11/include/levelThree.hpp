@@ -12,3 +12,5 @@ extern void testAsio();
 extern void testAsioClient();
 
 extern void testProfiling();
+extern void testTFLite();
+extern void testONNX();

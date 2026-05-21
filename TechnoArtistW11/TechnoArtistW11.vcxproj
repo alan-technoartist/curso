@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.props" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -103,12 +104,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\AlanBautista\tensorflow\tensorflow\lite\out\build\x64-Debug\flatbuffers\include;C:\Users\AlanBautista\tensorflow;C:\Program Files\MySQL\MySQL Connector C++ 9.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\lib64\vs14;C:\Users\AlanBautista\tensorflow\tensorflow\lite\out\build\x64-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerbose</ShowProgress>
     </Link>
@@ -121,14 +122,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\include;C:\Users\AlanBautista\tensorflow;C:\Users\AlanBautista\tensorflow\tensorflow\lite\out\build\x64-Debug\flatbuffers\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\lib64\vs14;C:\Users\AlanBautista\source\repos\TechnoArtistW11\TechnoArtistW11\LevelTwo\Algo;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlcppconn.lib;tensorflow-lite.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Connector C++ 9.6\lib64\vs14;C:\Users\AlanBautista\source\repos\TechnoArtistW11\TechnoArtistW11\LevelTwo\Algo;C:\Users\AlanBautista\tensorflow\tensorflow\lite\out\build\x64-Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -150,6 +151,8 @@
     <ClCompile Include="LevelThree\Concurrent\mutex.cpp" />
     <ClCompile Include="LevelThree\Concurrent\pool.cpp" />
     <ClCompile Include="LevelThree\Concurrent\threads.cpp" />
+    <ClCompile Include="LevelThree\IA\cppLiteRT.cpp" />
+    <ClCompile Include="LevelThree\IA\onnx.cpp" />
     <ClCompile Include="LevelThree\Memory\profiling.cpp" />
     <ClCompile Include="LevelThree\Net\asioClient.cpp" />
     <ClCompile Include="LevelThree\Net\asioServer.cpp" />
@@ -216,9 +219,17 @@
     <ClInclude Include="LevelTwo\STL\Iteradores\iteradores.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LevelThree\IA\basicTF.py" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.1.26.0\build\native\Microsoft.ML.OnnxRuntime.targets'))" />
+  </Target>
 </Project>

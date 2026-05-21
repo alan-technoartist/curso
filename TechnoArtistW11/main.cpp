@@ -125,7 +125,10 @@ int main() {
     //testCorutina();
     //testAsio();
     //testAsioClient();
-    testProfiling();
+    //testProfiling();
+
+    //testTFLite();
+    testONNX();
 
 
     //std::cout << "Fin de main" << std::endl;
