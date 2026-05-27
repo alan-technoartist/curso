@@ -1,93 +1,75 @@
 import numpy as np
-import subprocess, sys
 import tensorflow as tf
+import tf2onnx
+import subprocess, sys
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D
 from tensorflow.keras.optimizers import Adam
 
-print("[INFO] Construyendo modelo optimizado (ReLU + Adam + Keras)...")
+print("[INFO] Construyendo modelo MNIST (CNN simple)...")
 
 # ==========================================
-# 1. DATOS DE ENTRENAMIENTO (XOR)
+# 1. DATOS (MNIST viene con Keras)
 # ==========================================
-X = np.array([[0, 0], 
-              [0, 1], 
-              [1, 0], 
-              [1, 1]], dtype=np.float32)
+(X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-T = np.array([[0], 
-              [1], 
-              [1], 
-              [0]], dtype=np.float32)
+# Normalizar pixeles a [0, 1] y agregar canal (28,28) -> (28,28,1)
+X_train = X_train.astype(np.float32)[..., np.newaxis] / 255.0
+X_test  = X_test.astype(np.float32)[..., np.newaxis]  / 255.0
 
 # ==========================================
-# 2. ARQUITECTURA (El estandar de la industria)
+# 2. ARQUITECTURA
 # ==========================================
 model = Sequential([
-    # Capa Oculta: ReLU para aprender rapido. Subimos a 8 neuronas para darle mas capacidad.
-    Dense(8, activation='relu', input_shape=(2,)),
-    
-    # Capa de Salida: Sigmoide estricto para obtener probabilidades (0 al 1)
-    Dense(1, activation='sigmoid')
+    Conv2D(8, kernel_size=3, activation='relu', input_shape=(28, 28, 1)),
+    MaxPooling2D(pool_size=2),
+    Conv2D(16, kernel_size=3, activation='relu'),
+    MaxPooling2D(pool_size=2),
+    Flatten(),
+    Dense(32, activation='relu'),
+    Dense(10, activation='softmax'),   # 10 clases, no 1
 ])
 
 # ==========================================
-# 3. COMPILACIoN
+# 3. COMPILACION
 # ==========================================
-# Usamos Adam (mejor que SGD) y binary_crossentropy (mejor que MSE para clasificacion)
-model.compile(optimizer=Adam(learning_rate=0.05), 
-              loss='binary_crossentropy',
-              metrics=['binary_accuracy'])
+model.compile(
+    optimizer = Adam(learning_rate=1e-3),
+    loss      = 'sparse_categorical_crossentropy',
+    metrics   = ['accuracy'],
+)
 
 # ==========================================
 # 4. ENTRENAMIENTO
 # ==========================================
-print("[INFO] Entrenando el modelo...")
-# Gracias a las optimizaciones, converge en muchas menos apocas (500 en lugar de 5000)
-model.fit(X, T, epochs=300, verbose=0)
+print("[INFO] Entrenando...")
+model.fit(X_train, y_train, epochs=5, batch_size=128,
+          validation_split=0.1, verbose=1)
+
+#loss, acc = model.evaluate(X_test, y_test, verbose=0)
+#print(f"[INFO] Test accuracy: {acc:.4f}")
 
 # ==========================================
-# 5. INFERENCIA Y UMBRAL (Thresholding)
+# 5. INFERENCIA DE EJEMPLO
 # ==========================================
-print("\n[INFO] Entrenamiento finalizado. Predicciones:")
+probs = model.predict(X_test[:5], verbose=0)
 
-# Hacemos el Forward Pass final
-probabilidades = model.predict(X)
+for i in range(5):
+    pred = np.argmax(probs[i])
+    print(f"Real: {y_test[i]}  Prediccion: {pred}  "
+          f"Confianza: {probs[i][pred]:.4f}")
 
-for i in range(4):
-    prob = probabilidades[i][0]
-    
-    # Aplicamos la regla logica: Si es >= 50%, es clase 1, si no, es clase 0
-    clase_final = 1 if prob >= 0.5 else 0
-    
-    print(f"Entrada: {X[i]} -> Target: {T[i][0]} | Prob: {prob:.4f} | Prediccion Final: {clase_final}")
-
-
-print("[INFO] Convirtiendo el modelo a formato LiteRT (.tflite)...")
-
-# 1. Crear el convertidor usando tu modelo de Keras
-converter = tf.lite.TFLiteConverter.from_keras_model(model)
-
-# 2. (Opcional pero recomendado) Optimizar el modelo para que sea mas rapido
-converter.optimizations = [tf.lite.Optimize.DEFAULT]
-
-# 3. Realizar la conversion
-tflite_model = converter.convert()
-
-# 4. Guardar el archivo binario
-with open("modelo_xor.tflite", "wb") as f:
-    f.write(tflite_model)
-
-# 5. Exportar a formato savedmodel
+# ==========================================
+# 6. EXPORTACION A ONNX (identico a XOR)
+# ==========================================
 print("[INFO] Exportando a SavedModel...")
-model.export("modelo_xor_sm")
+model.export("modelo_mnist_sm")
 
-# 6. Convertir a ONNX
-print("[INFO] Convirtiendo SavedModel a ONNX...")
+print("[INFO] Convirtiendo a ONNX...")
 subprocess.run([
     sys.executable, "-m", "tf2onnx.convert",
-    "--saved-model", "modelo_xor_sm",
-    "--output", "modelo_xor.onnx"
+    "--saved-model", "modelo_mnist_sm",
+    "--output", "modelo_mnist.onnx",
+    "--opset", "17",
 ], check=True)
-
-print("[INFO] Modelo ONNX guardado en modelo_xor.onnx")
+print("[INFO] Modelo ONNX guardado en modelo_mnist.onnx")
